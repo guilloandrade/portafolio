@@ -160,7 +160,8 @@ span{
 
 .about {
     display: flex;
-    justify-content: center; align-items: center; 
+    justify-content: center; 
+    align-items: center; 
     gap: 2rem;
     background: var(--second-bg-color);
 
@@ -285,12 +286,16 @@ span{
 }
 
 .portfolio-layer h4{
-    font-size: 3rem;
+    font-size: 2.5rem;
+    text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
+   
 }
 
 .portfolio-layer p{
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     margin: 3rem 0 1rem;
+    font-weight: 700;
+    text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-layer a{
@@ -390,6 +395,7 @@ span{
 @media (max-width: 991px) {
      .header { 
         padding: 2rem 3%;
+        
      }
     section { padding: 10rem 3% 2rem;
     }
