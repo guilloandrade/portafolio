@@ -13,10 +13,10 @@
 }
 
 :root{
-    --bg-color: #1f242d;
-    --second-bg-color: #323946;
-    --text-color: #fff;
-    --main-color: #0ef;
+    --bg-color: #2D2D2D;
+    --second-bg-color: #454545;
+    --text-color: #FFFFFF;
+    --main-color: #FFC107;
 }
 
 html{
@@ -286,14 +286,14 @@ span{
 }
 
 .portfolio-layer h4{
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
    
 }
 
 .portfolio-layer p{
-    font-size: 1.3rem;
-    margin: 3rem 0 1rem;
+    font-size: 1.4rem;
+    margin: 2.6rem 0 1rem;
     font-weight: 700;
     text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
 }
@@ -302,8 +302,8 @@ span{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     background: var(--text-color);
     border-radius: 50%;
 }
