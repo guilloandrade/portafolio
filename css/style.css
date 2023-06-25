@@ -391,21 +391,25 @@ span {
     transition: background-image 0.3s ease-in-out;
 }
 
-.moto:hover {
+.skill-card .moto:hover {
     background-image: url('/images/moto2.png');
     filter: drop-shadow(0 0 1rem var(--main-color));
 }
 
 .skill-card:hover {
     border-radius: 1rem solid;
-    transform: scale(1.05);
-    color: var(--main-color);
-    transition: 0.4s ease;
-    text-shadow: 0 0 1rem var(--main-color);
+    transform: scale(1.06);
+    
 }
 
 .skill-card .bx {
     font-size: 7rem;
+}
+
+.skill-card .bx:hover{
+    color: var(--main-color);
+    transition: 0.4s ease;
+    text-shadow: 0 0 1rem var(--main-color);
 }
 
 
