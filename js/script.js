@@ -46,9 +46,9 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .Hard-Skills-container, .portafolio-box, .contact form, .carousel-container',  { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+ScrollReveal().reveal('.home-img, .Hard-Skills-container, .portafolio-box, .contact form, .carousel-container, .skills-items, .skills-hobbies',  { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img, .about-content', { origin: 'left' });
+ScrollReveal().reveal('.home-content p', { origin: 'right' });
 
 /*==========typed js, controla funcion de reescribir=========*/
 
