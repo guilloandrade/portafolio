@@ -17,16 +17,34 @@
     --second-bg-color: #454545;
     --text-color: #FFFFFF;
     --main-color: #FFC107;
+    
+}
+.dark-mode{
+    --bg-color: #2D2D2D;
+    --second-bg-color: #454545;
+    --text-color: #FFFFFF;
+    --main-color: #FFC107;
+    transition: .8s ease;
+}
+
+.light-mode{
+    --bg-color: #D9D9C6;
+    --second-bg-color: #FAFAF2;
+    --text-color: #333333;
+    --main-color: #FFBA00;
+    transition: .8s ease;
 }
 
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    
 }
 
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    
 }
 
 section {
@@ -42,7 +60,6 @@ section {
     padding: 2rem 5%;
     background: var(--bg-color);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
@@ -56,13 +73,25 @@ section {
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
+    margin-right: auto;
 }
 
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
-    margin-left: 4rem;
+    margin-right: 3rem;
     transition: .3s;
+    position: relative;
+}
+
+.navbar a.active::before { 
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: .2rem;
+    background: var(--main-color);
 }
 
 .navbar a:hover,
@@ -75,6 +104,12 @@ section {
     color: var(--text-color);
     display: none;
 }
+
+#lightMode-icon{
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
 
 .home {
     display: flex;
@@ -156,6 +191,7 @@ span {
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5s ease;
+
 }
 
 .btn:hover {
@@ -352,7 +388,7 @@ span {
     justify-content: center;
     flex-direction: column;
     cursor: pointer;
-    transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    /*transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);*/
     padding: 2rem;
     width: 120px;
 
@@ -362,12 +398,22 @@ span {
     width: 70px;
     height: 70px;
     position: relative;
+    
 }
 
 .anime {
     width: 100%;
     height: 100%;
     background-image: url('../images/anime.png');
+    background-size: cover;
+    transition: background-image 0.3s ease-in-out;
+    
+}
+
+.anime.anime-light {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/anime3.png');
     background-size: cover;
     transition: background-image 0.3s ease-in-out;
 }
@@ -387,6 +433,14 @@ span {
     width: 100%;
     height: 100%;
     background-image: url('../images/moto.png');
+    background-size: cover;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.moto.moto-light {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/moto3.png');
     background-size: cover;
     transition: background-image 0.3s ease-in-out;
 }
@@ -614,8 +668,17 @@ span {
 }
 
 @media (max-width: 768px) {
+    .logo{
+        order: -2
+    }
+
     #menu-icon {
         display: block;
+    }
+
+    .header.sticky {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .navbar {
@@ -640,6 +703,15 @@ span {
         margin: 3rem 0;
     }
 
+    .navbar a::before {
+        display: none;
+    }
+
+    #lightMode-icon{
+        order: -1;
+        margin-right: 1rem;
+    }
+    
     .home {
         flex-direction: column;
     }

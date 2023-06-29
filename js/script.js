@@ -97,3 +97,19 @@ nextBtn.addEventListener('click', nextSlide);
 prevBtn.addEventListener('click', prevSlide);
 
 setInterval(nextSlide, 3000); // Cambiar cada 3 segundos
+
+/*==========controlar color oscuro y claro tambien accedo auna clase y la remplazo=========*/
+
+let lightModeIcons = document.querySelectorAll('#lightMode-icon');
+let animeLight = document.querySelector('.anime');
+let motoLight = document.querySelector('.moto');
+
+lightModeIcons.forEach(lightModeIcon => {
+   lightModeIcon.addEventListener('click', () => {
+       lightModeIcon.classList.toggle('bx-sun');
+       lightModeIcon.classList.toggle('bx-moon');
+       document.body.classList.toggle('light-mode');
+       animeLight.classList.toggle('anime-light');
+       motoLight.classList.toggle('moto-light');
+   });
+});
