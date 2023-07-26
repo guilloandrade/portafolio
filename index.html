@@ -9,6 +9,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/1454827.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+
 
 </head>
 
@@ -188,7 +192,7 @@
             <div class="skill-card">
                 <div class="anime-container">
                     <div class="anime"></div>
-                  </div>
+                </div>
                 <h3>Ver Anime</h3>
 
             </div>
@@ -202,7 +206,7 @@
             <div class="skill-card">
                 <div class="moto-container">
                     <div class="moto"></div>
-                  </div>
+                </div>
                 <h3>Motos</h3>
 
             </div>
@@ -264,7 +268,9 @@
                 <img src="images/AluraGeek.png" alt="AluraGeek">
                 <div class="portfolio-layer">
                     <h4>AluraGeek</h4>
-                    <p>Estamos utilizando HTML para estructurar el contenido, CSS para estilizar y diseñar la página, y JavaScript para agregar interactividad. Además, estamos implementando características como filtrado, ordenamiento y optimizando el rendimiento</p>
+                    <p>Estamos utilizando HTML para estructurar el contenido, CSS para estilizar y diseñar la página, y
+                        JavaScript para agregar interactividad. Además, estamos implementando características como
+                        filtrado, ordenamiento y optimizando el rendimiento</p>
                     <a href="https://guilloandrade.github.io/AluraGeek/"><i class='bx bx-link-external'></i></a>
                 </div>
             </div>
@@ -311,17 +317,17 @@
     <!-- contact section design -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-        <form action="#">
+        <form id="contactForm" method="post">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+                <input type="text" name="Full Name" placeholder="Full Name" required>
+                <input type="email" name="Email Address" placeholder="Email Address" required>
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
+                <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
+                <input type="text" name="Email Subject" placeholder="Email Subject" required>
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="enviar mensaje" class="btn">
+            <textarea name="Your Message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Enviar mensaje" class="btn">
         </form>
     </section>
 
@@ -334,6 +340,41 @@
             <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
         </div>
     </footer>
+
+    <script>
+        // Obtener el formulario por su id
+        const form = document.getElementById('contactForm');
+      
+        // Agregar un evento para manejar el envío del formulario
+        form.addEventListener('submit', function (event) {
+          event.preventDefault(); // Evitar el envío normal del formulario
+      
+          // Obtener los datos del formulario
+          const formData = new FormData(form);
+      
+          // Realizar una solicitud AJAX con Axios
+          axios.post('https://formspree.io/f/xzblzqrn', formData)
+            .then(function (response) {
+              // Mostrar el mensaje de éxito utilizando SweetAlert2
+              Swal.fire({
+                icon: 'success',
+                title: 'Mensaje enviado correctamente',
+                showConfirmButton: false,
+                timer: 2000 // Tiempo en milisegundos que mostrará el mensaje antes de cerrarse automáticamente
+              });
+      
+              // Limpiar el formulario
+              form.reset();
+            })
+            .catch(function (error) {
+              // Manejar el error si es necesario
+              console.error('Error al enviar el mensaje', error);
+            });
+        });
+      </script>
+      
+
+
 
     <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
